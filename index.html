@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titel som syns i webbläsarfliken -->
+    <title>Coachen&trade;</title>
+    
+    <!-- Ikoner för webbläsarfliken och bokmärken -->
+    <!-- Se till att coachen_logo.png ligger i samma mapp som denna fil -->
+    <link rel="icon" type="image/png" href="coachen_logo.png">
+    <link rel="shortcut icon" type="image/png" href="coachen_logo.png">
+    <link rel="apple-touch-icon" href="coachen_logo.png">
+
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Lora for a stylish, classic feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Lora', serif;
+            
+            /* Basfärg: Uppdaterad till en mörkare, djupare blå (#06132e) för att matcha loggan */
+            background-color: #06132e;
+            
+            /* Tygstruktur */
+            background-image: 
+                linear-gradient(45deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent),
+                linear-gradient(-45deg, rgba(0, 0, 0, 0.15) 25%, transparent 25%, transparent 50%, rgba(0, 0, 0, 0.15) 50%, rgba(0, 0, 0, 0.15) 75%, transparent 75%, transparent);
+            
+            background-size: 3px 3px;
+            
+            min-height: 100vh;
+        }
+        
+        /* Custom class for the yellow-white text color */
+        .text-brand-cream {
+            color: #fdfbe0; 
+        }
+
+        /* Custom TM symbol style */
+        .tm-symbol {
+            font-size: 0.4em; 
+            vertical-align: top; 
+            position: relative;
+            top: 0.15em; 
+            margin-left: 2px;
+            font-weight: normal;
+            line-height: 1; 
+        }
+    </style>
+</head>
+<body class="flex flex-col">
+
+    <!-- Main Content Wrapper -->
+    <main class="flex-grow flex flex-col items-center pt-12 pb-8 px-4 sm:px-6 lg:px-8">
+        
+        <!-- Header Section -->
+        <header class="mb-12 w-full flex flex-col items-center animate-fade-in-down">
+            <!-- Stor Coachen Logga -->
+            <!-- Uppdaterad: Mycket större (h-52 på mobil, h-80 på dator) och utan skuggor/rundning -->
+            <img src="coachen_logo.png" 
+                 alt="Coachen" 
+                 class="h-52 md:h-80 w-auto object-contain mb-8">
+            
+            <!-- Välkomsttext -->
+            <h1 class="text-2xl md:text-4xl font-bold text-brand-cream tracking-widest uppercase text-center drop-shadow-md">
+                Välkommen till Coachen<sup class="tm-symbol">TM</sup>
+            </h1>
+        </header>
+
+        <!-- Selection Section -->
+        <div class="w-full max-w-4xl flex flex-col items-center">
+            
+            <!-- Instruction Text -->
+            <h2 class="text-sm md:text-base font-semibold text-brand-cream mb-8 tracking-widest uppercase text-center opacity-90">
+                VÄLJ DIN KLUBB FÖR ATT LOGGA IN
+            </h2>
+
+            <!-- Clubs Container -->
+            <div class="flex justify-center w-full">
+                
+                <!-- Qviding Link Card - Square with Tighter Margins & Bigger Content -->
+                <a href="https://qviding.coachen.se" 
+                   class="group flex flex-col items-center justify-center w-36 h-36 bg-white rounded-xl shadow-2xl hover:shadow-orange-500/20 border border-slate-100 transition-all duration-300 transform hover:-translate-y-1 cursor-pointer">
+                    
+                    <!-- Content Wrapper -->
+                    <div class="flex flex-col items-center justify-center p-1 w-full h-full">
+                        <!-- Qviding Logo Container -->
+                        <div class="h-24 w-24 flex items-center justify-center mb-1">
+                            <img src="https://dtbgkfenanclegtonjwl.supabase.co/storage/v1/object/public/logos/qviding_logo.png" 
+                                 onerror="this.src='qviding_logo.png'"
+                                 alt="Qviding FIF" 
+                                 class="max-h-full max-w-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        
+                        <!-- Club Name Label -->
+                        <span class="text-xs font-bold text-slate-800 uppercase tracking-widest group-hover:text-red-700 transition-colors text-center leading-tight">
+                            Qviding FIF
+                        </span>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-6 text-center text-brand-cream text-xs opacity-80 tracking-widest uppercase">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Coachen<sup class="tm-symbol">TM</sup></p>
+    </footer>
+
+    <!-- Custom Animation -->
+    <style>
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translate3d(0, -20px, 0);
+            }
+            to {
+                opacity: 1;
+                transform: translate3d(0, 0, 0);
+            }
+        }
+        .animate-fade-in-down {
+            animation-name: fadeInDown;
+            animation-duration: 0.8s;
+            animation-fill-mode: both;
+        }
+    </style>
+</body>
+</html>
